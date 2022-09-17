@@ -1,7 +1,7 @@
 {
-  "name": "authproxy",
+  "name": "@jclem/authproxy",
   "description": "A proxy for working with OAuth providers",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Jonathan Clem <j@jclem.me>",
   "bin": "script/start",
   "bugs": {
