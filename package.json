@@ -1,7 +1,7 @@
 {
   "name": "@jclem/authproxy",
   "description": "A proxy for working with OAuth providers",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "author": "Jonathan Clem <j@jclem.me>",
   "bin": "script/start",
   "bugs": {
@@ -25,10 +25,6 @@
     "tailwindcss": "^3.1.8",
     "typescript": "4.8.3"
   },
-  "files": [
-    ".next/",
-    "script/"
-  ],
   "homepage": "https://github.com/jclem/authproxy#readme",
   "keywords": [
     "oauth"
@@ -39,7 +35,7 @@
     "url": "git+https://github.com/jclem/authproxy.git"
   },
   "scripts": {
-    "build": "next build",
+    "build": "NODE_ENV=production next build",
     "check": "konk run c -L -n 'check:*'",
     "check:format": "prettier --check .",
     "check:lint": "eslint .",
