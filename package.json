@@ -1,7 +1,7 @@
 {
   "name": "@jclem/authproxy",
   "description": "A proxy for working with OAuth providers",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "author": "Jonathan Clem <j@jclem.me>",
   "bin": "script/start",
   "bugs": {
@@ -12,6 +12,13 @@
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
+  "files": [
+    ".next/",
+    "public/",
+    "script/",
+    "LICENSE.md",
+    "next.config.js"
+  ],
   "devDependencies": {
     "@types/node": "18.7.18",
     "@types/react": "18.0.20",
