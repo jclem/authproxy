@@ -1,5 +1,5 @@
 import type {NextPage} from 'next'
-import {useEffect, useRef, useState} from 'react'
+import {useCallback, useEffect, useRef, useState} from 'react'
 import {Layout} from '../components/Layout'
 import {useRedirectUrl} from '../hooks/useRedirectUrl'
 
@@ -15,31 +15,7 @@ const Redirect: NextPage = () => {
     if (intervalRef.current) clearInterval(intervalRef.current)
   }
 
-  const start = () => {
-    clearIntervalRef()
-    setIsCounting(true)
-    intervalRef.current = window.setInterval(tickCountdown, 1_000)
-  }
-
-  const stop = () => {
-    clearIntervalRef()
-    setIsCounting(false)
-  }
-
-  useEffect(() => {
-    start()
-    return clearIntervalRef
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  useEffect(() => {
-    setShowComponent(true)
-  }, [])
-
-  const [countdown, setCountdown] = useState(3)
-  const countdownRef = useRef(countdown)
-
-  const tickCountdown = () => {
+  const tickCountdown = useCallback(() => {
     if (!redirectTo) return
 
     if (countdownRef.current === 1) {
@@ -50,7 +26,30 @@ const Redirect: NextPage = () => {
         return countdownRef.current
       })
     }
+  }, [redirectTo])
+
+  const start = useCallback(() => {
+    clearIntervalRef()
+    setIsCounting(true)
+    intervalRef.current = window.setInterval(tickCountdown, 1_000)
+  }, [tickCountdown])
+
+  const stop = () => {
+    clearIntervalRef()
+    setIsCounting(false)
   }
+
+  useEffect(() => {
+    start()
+    return clearIntervalRef
+  }, [start])
+
+  useEffect(() => {
+    setShowComponent(true)
+  }, [])
+
+  const [countdown, setCountdown] = useState(3)
+  const countdownRef = useRef(countdown)
 
   return (
     <Layout>

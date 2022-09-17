@@ -1,6 +1,12 @@
 {
   "name": "authproxy",
+  "description": "A proxy for working with OAuth providers",
   "version": "0.1.0",
+  "author": "Jonathan Clem <j@jclem.me>",
+  "bin": "script/start",
+  "bugs": {
+    "url": "https://github.com/jclem/authproxy/issues"
+  },
   "dependencies": {
     "next": "12.3.0",
     "react": "18.2.0",
@@ -19,8 +25,19 @@
     "tailwindcss": "^3.1.8",
     "typescript": "4.8.3"
   },
+  "files": [
+    ".next/",
+    "script/"
+  ],
+  "homepage": "https://github.com/jclem/authproxy#readme",
+  "keywords": [
+    "oauth"
+  ],
   "license": "MIT",
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jclem/authproxy.git"
+  },
   "scripts": {
     "build": "next build",
     "check": "konk run c -L -n 'check:*'",
