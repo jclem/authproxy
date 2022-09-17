@@ -2,8 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  @apply bg-zinc-900;
-  @apply text-white;
+@layer base {
+  html,
+  body {
+    @apply bg-zinc-50;
+    @apply text-zinc-700;
+  }
+
+  a {
+    @apply text-sky-600 underline;
+  }
+
+  button,
+  button[type='submit'] {
+    @apply px-2 py-1 rounded border border-zinc-300 bg-zinc-200 hover:bg-zinc-300 shadow-sm;
+  }
+
+  button:disabled,
+  button[type='submit']:disabled {
+    @apply cursor-not-allowed text-zinc-600 border-none bg-zinc-100 hover:bg-zinc-100;
+  }
+
+  input[type='url'] {
+    @apply px-2 py-1 rounded border border-zinc-300;
+  }
+}
+
+@layer utilities {
+  .spin {
+    animation: spin 16s linear infinite;
+  }
+
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
