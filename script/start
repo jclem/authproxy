@@ -2,5 +2,5 @@
 
 set -e
 
-cd node_modules/authproxy
+cd node_modules/@jclem/authproxy
 npm start
