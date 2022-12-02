@@ -52,7 +52,7 @@ const Home: NextPage<Props> = () => {
               </code>{' '}
               <button
                 type="button"
-                title="Click to copy"
+                title="Click to clear redirect URL"
                 onClick={clearUrl}
                 disabled={!url}
                 className="w-16 p-2 border-t border-r border-b border-l-0 rounded-r-md rounded-l-none"
