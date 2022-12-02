@@ -8,7 +8,6 @@ export const Layout: FC<PropsWithChildren> = ({children}) => {
         <h1 className="text-xl font-semibold">
           <Link href="/">Authproxy</Link>
         </h1>
-
         <p>
           Authproxy allows you to develop against OAuth providers that do not
           accept wildcard callback URLs. This is useful, for example, when
