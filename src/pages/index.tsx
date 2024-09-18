@@ -7,7 +7,7 @@ interface Props {
   redirectUrl: string | null
 }
 
-const redirectURL = 'https://www.authproxy.dev/redirect'
+const redirectURL = 'https://authproxy.dev/redirect'
 
 const Home: NextPage<Props> = () => {
   const [url, setUrl, clearUrl] = useRedirectUrl()
